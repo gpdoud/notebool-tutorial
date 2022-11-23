@@ -1,0 +1,134 @@
+#!markdown
+
+# Chapter 2 - Speaking C#!
+
+## Create the Student & Major classes
+
+#!csharp
+
+class Major {
+    public string Code { get; set; }
+    public string Description { get; set; }
+    public int MinSAT { get; set; }
+    public void Print() {
+        Console.WriteLine($"{Code} | {Description} | {MinSAT}");
+    }
+}
+
+Major math = new() { Code = "MATH", Description = "Mathematics", MinSAT = 1200 };
+
+#!csharp
+
+math.Print();
+
+#!csharp
+
+var number = 8;
+
+#!csharp
+
+Console.WriteLine(number);
+
+#!markdown
+
+# Arrays
+
+Arrays are variables that can store multiple values. All the items in an array must be of the sames type. They have a maximum number of "slots" and cannot grow or shrink that number.
+
+#!csharp
+
+string[] names = { "Josh", "Billy", "Karl", "Caleb", "Ian", "Jack", "Sam", "James" };
+foreach(string name in names) { Console.WriteLine(name); }
+
+#!markdown
+
+## Assignment: Calculate bowling game scores
+
+In the sport of bowling, three games are a series. Here are the scores for three games that you should put into an array named `games` then add up all three scores and output the series score.
+
+#!csharp
+
+int[] games = { 145, 264, 244 };
+int seriesScore = games[0] + games[1] + games[2];
+Console.WriteLine($"Series score is {seriesScore}");
+
+#!markdown
+
+Now we enhance this by using the `Console.ReadLine()` method to ask the user for each score, add each on into the array, then, after the third score, add up all the score and display the sum
+
+#!csharp
+
+int[] scores = new int[3];
+// Console.Write("Enter 1st score: ");
+string answer = "100"; // Console.ReadLine();
+scores[0] = Convert.ToInt32(answer);
+// Console.Write("Enter 2nd score: ");
+answer = "150"; // Console.ReadLine();
+scores[1] = Convert.ToInt32(answer);
+// Console.Write("Enter last score: ");
+answer = "250"; // Console.ReadLine();
+scores[2] = Convert.ToInt32(answer);
+int total = scores[0] + scores[1] + scores[2];
+Console.WriteLine($"The total of scores {scores[0]}, {scores[1]}, and {scores[2]} is {total}"); // 500
+
+#!markdown
+
+# Chapter 3 - Controlling Flow, Converting Types, and Handling Exceptions
+
+#!csharp
+
+int n = 0;
+
+n = n + 1; // n is 1
+n++; // n is 2
+n++; // n is 3
+
+n--; // n is 2
+++n; // n is 3
+
+int a = 0;
+int b = a++; // b is 0; a is 1;
+int c = ++a; // c is 2; a is 2;
+
+#!csharp
+
+int a = 1;
+
+int b = +a; // b is 1
+
+int c = -a; // c is -1
+
+a = -1;
+
+b = +a; // b is -1
+
+c = -a; // c is 1;
+
+#!csharp
+
+// 5 % 2 = 1
+
+#!csharp
+
+int n = 0
+
+n = n + 5;
+
+n += 5;
+
+XOR
+
+A | B | A ^ B |
+T | T |   F   |
+T | F |   T   |
+F | T |   T   |
+F | F |   F   |
+
+#!csharp
+
+int a = 0;
+int b = 1;
+
+var answer = (a == 1) & (++b == 1)
+
+answer = (a == 1) && (++b == 1)
